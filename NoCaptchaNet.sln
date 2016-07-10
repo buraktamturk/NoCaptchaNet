@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tamturk.NoCaptcha", "Tamturk.NoCaptcha\Tamturk.NoCaptcha.xproj", "{092A739F-4FEE-4EEA-9AD8-0B285E9ACF38}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{092A739F-4FEE-4EEA-9AD8-0B285E9ACF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092A739F-4FEE-4EEA-9AD8-0B285E9ACF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092A739F-4FEE-4EEA-9AD8-0B285E9ACF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092A739F-4FEE-4EEA-9AD8-0B285E9ACF38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
