@@ -15,7 +15,7 @@ namespace Tamturk.AspNetCore.NoCaptcha {
             return services
                     .AddSingleton(new ReCaptchaValidator(private_key, public_key))
                     .AddSingleton(options ?? new ReCaptchaOptions())
-                    .AddScoped<ReCaptchaRequstValidator>();
+                    .AddScoped<ReCaptchaRequestValidator>();
         }
     }
 }

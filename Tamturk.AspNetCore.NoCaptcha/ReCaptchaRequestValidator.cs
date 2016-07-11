@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Tamturk.NoCaptcha;
 
 namespace Tamturk.AspNetCore.NoCaptcha {
-    public class ReCaptchaRequstValidator {
+    public class ReCaptchaRequestValidator {
         public HttpContext context;
         public ReCaptchaValidator validator;
         public ReCaptchaOptions options;
 
-        public ReCaptchaRequstValidator(HttpContextAccessor context, ReCaptchaValidator validator, ReCaptchaOptions options) {
+        public ReCaptchaRequestValidator(HttpContextAccessor context, ReCaptchaValidator validator, ReCaptchaOptions options) {
             this.context = context.HttpContext;
             this.validator = validator;
             this.options = options;

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Tamturk.NoCaptcha;
 
 namespace Tamturk.AspNetCore.NoCaptcha {
-    public class NoCaptchaRequstValidator {
+    public class NoCaptchaRequestValidator {
         public HttpContext context;
         public NoCaptchaValidator validator;
         public NoCaptchaOptions options;
 
-        public NoCaptchaRequstValidator(HttpContextAccessor context, NoCaptchaValidator validator, NoCaptchaOptions options) {
+        public NoCaptchaRequestValidator(HttpContextAccessor context, NoCaptchaValidator validator, NoCaptchaOptions options) {
             this.context = context.HttpContext;
             this.validator = validator;
             this.options = options;
