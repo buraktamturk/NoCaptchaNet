@@ -8,32 +8,38 @@ using Tamturk.NoCaptcha;
 namespace Tamturk.AspNetCore.NoCaptcha {
     public class ReCaptchaRequstValidator {
         public HttpContext context;
-        public NoCaptchaValidator validator;
-        public NoCaptchaOptions options;
+        public ReCaptchaValidator validator;
+        public ReCaptchaOptions options;
 
-        public ReCaptchaRequstValidator(HttpContextAccessor context, NoCaptchaValidator validator, NoCaptchaOptions options) {
+        public ReCaptchaRequstValidator(HttpContextAccessor context, ReCaptchaValidator validator, ReCaptchaOptions options) {
             this.context = context.HttpContext;
             this.validator = validator;
             this.options = options;
         }
 
         public async Task ValidateAsync() {
-            string response = null;
+            string response = null, challenge = null;
 
             if (options.customTokenProvider != null) {
-                response = options.customTokenProvider(context.Request);
+                if(!options.customTokenProvider(context.Request, out response, out challenge)) {
+                    if (response == null) {
+                        throw new CaptchaException("no challenge provided");
+                    }
+                }
             } else {
                 response = context.Request.Headers["G-Token-Response"];
+                challenge = context.Request.Headers["G-Token-Challenge"];
                 if (response == null && context.Request.HasFormContentType) {
-                    response = context.Request.Form["g-token-response"];
+                    response = context.Request.Form["recaptcha_response_field"];
+                    challenge = context.Request.Form["recaptcha_challenge_field"];
+                }
+                
+                if (response == null || challenge == null) {
+                    throw new CaptchaException("no challenge provided");
                 }
             }
-
-            if (response == null) {
-                throw new CaptchaException("no channelge provided");
-            }
-
-            await validator.ValidateAsync(response);
+            
+            await validator.ValidateAsync(response, challenge, context.Connection.RemoteIpAddress.ToString());
         }
     }
 }
