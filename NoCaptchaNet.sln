@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tamturk.NoCaptcha", "Tamturk.NoCaptcha\Tamturk.NoCaptcha.xproj", "{092A739F-4FEE-4EEA-9AD8-0B285E9ACF38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tamturk.NoCaptcha", "Tamturk.NoCaptcha\Tamturk.NoCaptcha.csproj", "{092A739F-4FEE-4EEA-9AD8-0B285E9ACF38}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tamturk.AspNetCore.NoCaptcha", "Tamturk.AspNetCore.NoCaptcha\Tamturk.AspNetCore.NoCaptcha.xproj", "{5F4BEC0A-BD97-4567-94C0-6DAD43FBBC42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tamturk.AspNetCore.NoCaptcha", "Tamturk.AspNetCore.NoCaptcha\Tamturk.AspNetCore.NoCaptcha.csproj", "{5F4BEC0A-BD97-4567-94C0-6DAD43FBBC42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5AEE5CB-2964-4D47-911B-5637332A13A7}
 	EndGlobalSection
 EndGlobal
